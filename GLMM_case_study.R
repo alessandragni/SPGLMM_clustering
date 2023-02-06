@@ -1,5 +1,5 @@
 ## PARAMETRIC GLMM applied to case study
-## Outputs are saved into df_level2_pred.csv
+## Outputs are saved into output/df_level2_pred.csv
 
 #__________________
 ## Libraries import
