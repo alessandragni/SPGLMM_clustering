@@ -129,8 +129,7 @@ ggsave(filename = 'ran_int_Bern.pdf',
 
 
 #_________________
-## C) POISSON response
-# Save the GLMM predictions in df_level2_pred.csv
+## Save the GLMM predictions in df_level2_pred.csv
 
 write.csv(df,"output/df_level2_pred.csv", row.names = FALSE)
 
