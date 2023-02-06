@@ -166,4 +166,4 @@ Jeffrey W. [rrrpkg Github Page](https://github.com/ropensci/rrrpkg).
 
 ## MY THINGS:
 
-* GLMM_case_study.R uses code/df_level2.csv in input and produces df_level2_pred.csv in output
+* GLMM_case_study.R uses code/df_level2.csv in input and produces output/df_level2_pred.csv in output
