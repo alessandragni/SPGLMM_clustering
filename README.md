@@ -5,6 +5,15 @@ Clustering Hierarchies via a Semi-Parametric Generalized Linear Mixed Model: a s
 
 ## Data
 
+Real data files (for the case study):
+
+* raw_data_import_and_preprocessing.R is an R script containing the code for importing, preprocessing and merging the raw data input (downloadable from https://webfs.oecd.org/pisa2018/SPSS_STU_QQQ.zip and https://webfs.oecd.org/pisa2018/SPSS_SCH_QQQ.zip);
+
+* df_level2.csv is the cleaned dataset produced by processing the raw input data mentioned above;
+
+
+Simulated data files (for the simulation study):
+
 ### Abstract
 
 ### Availability
