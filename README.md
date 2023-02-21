@@ -57,17 +57,15 @@ In the main we can find:
 3. `Check_Poisson_distribution.ipynb`: for testing within the case study whether Y_MATH is Poisson-distributed;
 5. `Analysis_case_study_results.ipynb`: script for producing case study results reported within Sections 3 of the paper and S4 of Supplementary Materials;
 6. `SPGLMM_simulation_study.ipynb`: for running the SPGLMM (simulation study), produces pickles files within `output`/`simulation_study_results`;
-7. `Analysis_simulation_study_results.ipynb`: for producing some results reported within Sections 4 of the paper and S5 of Supplementary Materials;
-8. `DG_SPGLMM_comparison_state_of_art.ipynb`: for 
-*generating 
-*running
-10. `GLMM_comparison_state_of_art.R`
+7. `Analysis_simulation_study_results.ipynb`: script for producing some results reported within Sections 4 of the paper and S5 of Supplementary Materials;
+8. `DG_SPGLMM_comparison_state_of_art.ipynb`: for generating data (.csv files are saved in folders `output`/`comparison_state_of_art`/`Bernoulli_DG_output` and `output`/`comparison_state_of_art`/`Poisson_DG_output`, respectively for Bernoulli and Poisson responses) and running the SPGLMM on those files (.csv files with results are saved in `output`/`comparison_state_of_art`/`Bernoulli_SPGLMM_output` and `output`/`comparison_state_of_art`/`Poisson_SPGLMM_output`, respectively for Bernoulli and Poisson responses);
+10. `GLMM_comparison_state_of_art.R`: script for producing the other results reported within Sections 4 of the paper and S5 of Supplementary Materials.
 
-The `output` directory holds objects derived from computations, including results of simulations or real data analyses. The contents of the folder are as follows:
+The `output` directory holds objects derived from computations, including results of simulations or real data analyses. The contents of the folder are as follows, as already mentioned:
+1. `output`/`df_level2_pred.csv`: .csv with results of `GLMM_case_study.R`;
+2. `output`/`simulation_study_results`: folder with pickles results of `SPGLMM_simulation_study.ipynb`;
+3. `output`/`comparison_state_of_art`: folder with other folders result of `DG_SPGLMM_comparison_state_of_art.ipynb`.
 
-
-
-### Optional Information
 
 ## Instructions for use
 
