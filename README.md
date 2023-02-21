@@ -26,11 +26,11 @@ Code to generate the simulated data and (if relevant) and facsimile data provide
 ### Description
 
 Cleaned data that are produced by processing raw input data are placed in `data`. Specifically:
-* `raw_data_import_and_preprocessing.R` is an R script containing the code for importing, preprocessing and merging the raw data input (downloadable from https://webfs.oecd.org/pisa2018/SPSS_STU_QQQ.zip and https://webfs.oecd.org/pisa2018/SPSS_SCH_QQQ.zip);
+* `data/raw_data_import_and_preprocessing.R` is an R script containing the code for importing, preprocessing and merging the raw data input (downloadable from https://webfs.oecd.org/pisa2018/SPSS_STU_QQQ.zip and https://webfs.oecd.org/pisa2018/SPSS_SCH_QQQ.zip);
 
-* `df_level2.csv` is the cleaned dataset produced by processing the raw input data mentioned above;
+* `data/df_level2.csv` is the cleaned dataset produced by processing the raw input data mentioned above;
 
-* `iso_countries.xlsx` is the excel retrieved from the Codebook (https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx) that associates each country with its ISO code.
+* `data/iso_countries.xlsx` is the excel retrieved from the Codebook (https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx) that associates each country with its ISO code.
 
 
 
