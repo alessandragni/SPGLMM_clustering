@@ -71,5 +71,5 @@ The `output` directory holds objects derived from computations, including result
 
 ### Reproducibility
 
-## Notes
+Results of the paper reported in Sections 3 and 4 (and S4 and S5 of Supplementary Materials) can be reproduced by running `Analysis_case_study_results.ipynb`, `Analysis_simulation_study_results.ipynb` and `GLMM_comparison_state_of_art.R`
 
