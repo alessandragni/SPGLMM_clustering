@@ -19,10 +19,6 @@ The data are preprocessed as described in Section 3.1 of the paper.
 
 Raw data are publicly available at https://www.oecd.org/pisa/data/2018database/.
 
-### Simulated Data
-
-Code to generate the simulated data and (if relevant) and facsimile data provided in place of confidential real data might also be placed here. 
-
 ### Description
 
 Cleaned data that are produced by processing raw input data are placed in `data`. Specifically:
