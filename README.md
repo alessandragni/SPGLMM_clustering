@@ -42,32 +42,29 @@ Scripts that execute the overall workflow to carry out an analysis and generate 
 The folder `code` contains the core code to implement the SPGLMM and various utility/auxiliary functions.
 
 
-
 ### Description
 
 The contents of the folder `code` are as follows:
-
-1. `code`/`DataGeneration_class.py`: 
-2. `code`/`AlgorithmComp_class.py`: class for 
-3. `code`/`Auxiliary_functions.py`: auxiliary function for the SPGLMM algorithm
-4. `code`/`algorithm_alpha.py`: function for SPGLMM algorithm with $\alpha$-criterion
-5. `code`/`algorithm_t.py`: function for SPGLMM algorithm with t-criterion
+1. `code`/`DataGeneration_class.py`: class for generating data, to be used both for real case studies and for simulations, both for Bernoulli and Poisson responses;
+2. `code`/`AlgorithmComp_class.py`: class that implements all the utilities for running the SPGLMM algorithm;
+3. `code`/`Auxiliary_functions.py`: auxiliary function for the SPGLMM algorithm;
+4. `code`/`algorithm_alpha.py`: function for SPGLMM algorithm with $\alpha$-criterion, to be used both for real case studies and for simulations, both for Bernoulli and Poisson responses;
+5. `code`/`algorithm_t.py`: function for SPGLMM algorithm with t-criterion, to be used both for real case studies and for simulations, both for Bernoulli and Poisson responses.
 
 In the main we can find:
+1. `SPGLMM_case_study.ipynb`: for running the SPGLMM (case study), takes `data`/`df_level2.csv` in input and produces pickles files within `output`/`case_study_results`;
+2. `GLMM_case_study.R`: for running the parametric GLMM (case study), takes `data`/`df_level2.csv` in input and produces `output`/`df_level2_pred.csv`;
+3. `Check_Poisson_distribution.ipynb`: for testing within the case study whether Y_MATH is Poisson-distributed;
+5. `Analysis_case_study_results.ipynb`: script for producing case study results reported within Sections 3 of the paper and S4 of Supplementary Materials;
+6. `SPGLMM_simulation_study.ipynb`: for running the SPGLMM (simulation study), produces pickles files within `output`/`simulation_study_results`;
+7. `Analysis_simulation_study_results.ipynb`: for producing some results reported within Sections 4 of the paper and S5 of Supplementary Materials;
+8. `DG_SPGLMM_comparison_state_of_art.ipynb`: for 
+*generating 
+*running
+10. `GLMM_comparison_state_of_art.R`
 
-1. `SPGLMM_case_study.ipynb`
-2. `GLMM_case_study.R`
-3. `Check_Poisson_distribution.ipynb`
-4. `Analysis_case_study_results.ipynb`
-5. `SPGLMM_simulation_study.ipynb`
-6. `Analysis_simulation_study_results.ipynb`
-7. `DG_SPGLMM_comparison_state_of_art.ipynb`
-8. `GLMM_comparison_state_of_art.R`
+The `output` directory holds objects derived from computations, including results of simulations or real data analyses. The contents of the folder are as follows:
 
-
-The `output` directory holds objects derived from computations, including results of simulations or real data analyses. 
-
-GLMM_case_study.R uses code/df_level2.csv in input and produces output/df_level2_pred.csv in output
 
 
 ### Optional Information
