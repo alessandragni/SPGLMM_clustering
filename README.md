@@ -5,33 +5,34 @@ Clustering Hierarchies via a Semi-Parametric Generalized Linear Mixed Model: a s
 
 ## Data
 
-This directory would generally contain the real data files (or facsimile versions of them in place of confidential data) and simulated data files.
+### Abstract
 
-Cleaned data that are produced by processing raw input data might also be placed here.
+The case study considered in this paper is implemented using a subset of the OECD'S PISA survay data of 2018 to cluster countries standing on their innumeracy levels, i.e., the levels of mathematical illiteracy. 
+The OECD’s PISA measures 15-year-olds’ knowledge and skills in reading, mathematics, and science to handle real-life challenges. 
+Our focus is on mathematical performance, which evaluates students’ ability to apply math in various contexts. 
+The global indicators for the United Nations Sustainable Development Goals identify a minimum Level of Proficiency - computed on the obtained scores - 
+that all children should acquire by the end of secondary education: students below this level are considered low-achieving students. 
+We aim at investigating the effect the countries involved in the OECD’s PISA 2018 survey have on the rate of low-achieving students in mathematics.
+The data are preprocessed as described in Section 3.1 of the paper.
+
+### Availability
+
+Raw data are publicly available at https://www.oecd.org/pisa/data/2018database/.
+
+### Simulated Data
 
 Code to generate the simulated data and (if relevant) and facsimile data provided in place of confidential real data might also be placed here. 
 
-Code for data cleaning could potentially also be placed here rather than in `code`.
+### Description
 
-
-Real data files (for the case study):
-
+Cleaned data that are produced by processing raw input data are placed in `data`. Specifically:
 * `raw_data_import_and_preprocessing.R` is an R script containing the code for importing, preprocessing and merging the raw data input (downloadable from https://webfs.oecd.org/pisa2018/SPSS_STU_QQQ.zip and https://webfs.oecd.org/pisa2018/SPSS_SCH_QQQ.zip);
 
 * `df_level2.csv` is the cleaned dataset produced by processing the raw input data mentioned above;
 
-* `iso_countries.xlsx`
+* `iso_countries.xlsx` is the excel retrieved from the Codebook (https://webfs.oecd.org/pisa2018/PISA2018_CODEBOOK.xlsx) that associates each country with its ISO code.
 
 
-Simulated data files (for the simulation study):
-
-### Abstract
-
-### Availability
-
-### Simulated data
-
-### Description
 
 
 ## Code
