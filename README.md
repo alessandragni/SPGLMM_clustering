@@ -36,22 +36,24 @@ Cleaned data that are produced by processing raw input data are placed in `data`
 
 ### Abstract
 
-The code includes all functions necessary to run the results found in Sections 3 and 4 of the paper (and S4 and S5 of Supplementary Materials).
+The code includes all functions necessary to implement and run the results found in Sections 3 and 4 of the paper (and S4 and S5 of Supplementary Materials).
 
-This directory would generally contain source code files that contain the core code to implement the method and various utility/auxiliary functions.
+Scripts that execute the overall workflow to carry out an analysis and generate results for the manuscript are placed in the main directory.
+The folder `code` contains the core code to implement the SPGLMM and various utility/auxiliary functions.
 
-Scripts/code files that execute the overall workflow to carry out an analysis and generate results for the manuscript might be placed in the main directory.
+
 
 ### Description
 
-In folder `code` contains the core code to implement the SPGLMM and various utility/auxiliary functions.
+The contents of the folder `code` are as follows:
 
-1. `code`/`DataGeneration_class.py`
-2. `code`/`AlgorithmComp_class.py`
-3. `code`/`Auxiliary_functions.py`
-4. `code`/`algorithm_alpha.py`
-5. `code`/`algorithm_t.py`
+1. `code`/`DataGeneration_class.py`: 
+2. `code`/`AlgorithmComp_class.py`: class for 
+3. `code`/`Auxiliary_functions.py`: auxiliary function for the SPGLMM algorithm
+4. `code`/`algorithm_alpha.py`: function for SPGLMM algorithm with $\alpha$-criterion
+5. `code`/`algorithm_t.py`: function for SPGLMM algorithm with t-criterion
 
+In the main we can find:
 
 1. `SPGLMM_case_study.ipynb`
 2. `GLMM_case_study.R`
@@ -65,6 +67,7 @@ In folder `code` contains the core code to implement the SPGLMM and various util
 
 The `output` directory holds objects derived from computations, including results of simulations or real data analyses. 
 
+GLMM_case_study.R uses code/df_level2.csv in input and produces output/df_level2_pred.csv in output
 
 
 ### Optional Information
@@ -75,7 +78,3 @@ The `output` directory holds objects derived from computations, including result
 
 ## Notes
 
-
-## MY THINGS:
-
-* GLMM_case_study.R uses code/df_level2.csv in input and produces output/df_level2_pred.csv in output
