@@ -1,9 +1,8 @@
 Clustering Hierarchies via a Semi-Parametric Generalized Linear Mixed Model: a statistical significance-based approach
 ================
 
-# Authors Contributions Checklist Form
 
-## Data
+# Data
 
 ### Abstract
 
@@ -32,7 +31,7 @@ Cleaned data that are produced by processing raw input data are placed in `data`
 
 
 
-## Code
+# Code
 
 ### Abstract
 
@@ -67,7 +66,7 @@ The `output` directory holds objects derived from computations, including result
 3. `output`/`comparison_state_of_art`: folder with other folders result of `DG_SPGLMM_comparison_state_of_art.ipynb`.
 
 
-## Instructions for use
+# Instructions for use
 
 ### Reproducibility
 
