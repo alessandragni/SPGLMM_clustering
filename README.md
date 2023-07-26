@@ -1,4 +1,4 @@
-Clustering Hierarchies via a Semi-Parametric Generalized Linear Mixed Model: a statistical significance-based approach
+Clustering Grouped Data via a Semi-Parametric Generalized Linear Mixed Model: a statistical significance-based approach
 ================
 
 
