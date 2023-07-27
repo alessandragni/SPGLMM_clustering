@@ -6,12 +6,12 @@ Clustering Grouped Data via a Semi-Parametric Generalized Linear Mixed Model: a 
 
 ### Abstract
 
-The case study considered in this paper is implemented using a subset of the OECD'S PISA survay data of 2018 to cluster countries standing on their innumeracy levels, i.e., the levels of mathematical illiteracy. 
+The case study considered in this paper is implemented using a subset of the OECD'S PISA survey data of 2018 to cluster countries standing on their innumeracy levels, i.e., the levels of mathematical illiteracy. 
 The OECD’s PISA measures 15-year-olds’ knowledge and skills in reading, mathematics, and science to handle real-life challenges. 
 Our focus is on mathematical performance, which evaluates students’ ability to apply math in various contexts. 
 The global indicators for the United Nations Sustainable Development Goals identify a minimum Level of Proficiency - computed on the obtained scores - 
 that all children should acquire by the end of secondary education: students below this level are considered low-achieving students. 
-We aim at investigating the effect the countries involved in the OECD’s PISA 2018 survey have on the rate of low-achieving students in mathematics.
+We aim to investigate the effect the countries involved in the OECD’s PISA 2018 survey have on the rate of low-achieving students in mathematics.
 The data are preprocessed as described in Section 3.1 of the paper.
 
 ### Availability
