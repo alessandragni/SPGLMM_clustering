@@ -13,7 +13,7 @@ from .DataGeneration_class import DataGenerationPoisson
 
 class AlgorithmComp:
 
-    def __init__(self, ran_var, ran_int, n_fix, sim, tol, model, fix, lengths, y, N):
+    def __init__(self, ran_var, ran_int, n_fix, sim, tol, model, fix, lengths, y, N, t):
         # model can assume values 'P' (Poisson) or 'B' (Bernoulli)
         self.ran_var = ran_var
         self.ran_int = ran_int
@@ -24,6 +24,7 @@ class AlgorithmComp:
             self.fix = fix
             self.lengths = lengths
             self.y = y
+            self.t = t
 
         self.n_ran = self.ran_int + self.ran_var  # number of total random effects we have in total
         # n_ran can assume values 1 (just intercept or variable) or 2
@@ -38,9 +39,9 @@ class AlgorithmComp:
         self.itmax = 20
 
         if model == 'B':
-            self.DG = DataGenerationBernoulli(ran_var, ran_int, n_fix, sim, fix, lengths, y, N)
+            self.DG = DataGenerationBernoulli(ran_var, ran_int, n_fix, sim, fix, lengths, y, N, t)
         elif model == 'P':
-            self.DG = DataGenerationPoisson(ran_var, ran_int, n_fix, sim, fix, lengths, y, N)
+            self.DG = DataGenerationPoisson(ran_var, ran_int, n_fix, sim, fix, lengths, y, N, t)
 
         self.DG.set_parameters()
         self.get_parameters()
@@ -55,7 +56,6 @@ class AlgorithmComp:
         self.par = self.DG.par
         self.weights = self.DG.weights
         self.glm_mat = self.DG.glm_mat
-        self.t = self.DG.t
         self.range_min = self.DG.range_min
         self.range_max = self.DG.range_max
 
@@ -63,6 +63,7 @@ class AlgorithmComp:
             self.lengths = self.DG.lengths
             self.N = self.DG.N
             self.y = self.DG.y
+            self.t = self.DG.t
             self.fix = self.DG.fix
             self.fix_var_values = self.DG.fix_var_values
             self.ran_var_values = self.DG.ran_var_values

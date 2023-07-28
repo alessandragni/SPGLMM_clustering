@@ -12,7 +12,7 @@ class DataGeneration(ABC):
     """
     """
 
-    def __init__(self, ran_var, ran_int, n_fix, sim, fix=None, lengths=None, y=None, N=None):
+    def __init__(self, ran_var, ran_int, n_fix, sim, fix=None, lengths=None, y=None, N=None, t=None):
         self.sim = sim
         self.ran_var = ran_var
         self.ran_int = ran_int
@@ -23,8 +23,10 @@ class DataGeneration(ABC):
             self.N = np.sum(self.subgroups_teor)
             self.data = None
             self.eta = None
+            self.t = None
         else:
             self.N = N
+            self.t = t
 
         if self.ran_var:
             self.z = 2  # we need z for accessing the fixed parameters of glm_mat
@@ -40,7 +42,6 @@ class DataGeneration(ABC):
         # creating a np.array of 1/nknots with length nknots
 
         # from the methods
-        self.t = None
         self.fix = fix
         self.lengths = lengths
         self.y = y
@@ -158,8 +159,8 @@ class DataGeneration(ABC):
 
 
 class DataGenerationBernoulli(DataGeneration):
-    def __init__(self, ran_var, ran_int, n_fix, sim, fix, lengths, y, N):
-        super().__init__(ran_var, ran_int, n_fix, sim, fix, lengths, y, N)
+    def __init__(self, ran_var, ran_int, n_fix, sim, fix=None, lengths=None, y=None, N=None, t=None):
+        super().__init__(ran_var, ran_int, n_fix, sim, fix, lengths, y, N, t)
         if self.sim:
             r = np.random.RandomState(1234)
             self.fix_var_values = np.ceil(r.uniform(-10, 10, n_fix))
@@ -230,8 +231,8 @@ class DataGenerationBernoulli(DataGeneration):
 
 
 class DataGenerationPoisson(DataGeneration):
-    def __init__(self, ran_var, ran_int, n_fix, sim, fix, lengths, y, N):
-        super().__init__(ran_var, ran_int, n_fix, sim, fix, lengths, y, N)
+    def __init__(self, ran_var, ran_int, n_fix, sim, fix=None, lengths=None, y=None, N=None, t=None):
+        super().__init__(ran_var, ran_int, n_fix, sim, fix, lengths, y, N, t)
 
         if self.sim:
             r = np.random.RandomState(1234)
