@@ -6,7 +6,8 @@ from .AlgorithmComp_class import AlgorithmComp
 
 def algorithm_t(ran_var, ran_int, n_fix, sim, tol, model, fix, lengths, y, N, t):
     AC = AlgorithmComp(ran_var, ran_int, n_fix, sim, tol, model, fix, lengths, y, N, t)
-
+    # t is the variable for the random slope
+    # t = df.groupby('GROUP_VARIABLE')['VARIABLE_NAME'].apply(np.array).values.tolist()
     k = 1
     conv1 = 0
     conv2 = 0
