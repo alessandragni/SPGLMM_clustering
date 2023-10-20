@@ -8,7 +8,10 @@ from numpy import linalg as la
 from scipy.stats import chi2
 
 def check(k_old, k, tol):
-    return sum(np.absolute(k_old - k) > tol)
+    if np.size(k_old) == np.size(k):
+        return sum(np.absolute(k_old - k) > tol)
+    else:
+        return 1
 
 
 def plot_ellipse(mu, sigma, n_std_tau, ax=None, **kwargs):
