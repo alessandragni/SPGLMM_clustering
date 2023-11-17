@@ -5,6 +5,8 @@ from scipy.spatial import distance_matrix
 import numdifftools as nd
 import matplotlib.pyplot as plt
 import scipy.stats as st
+import sys
+from math import isnan
 
 np.set_printoptions(precision=5)
 
@@ -114,8 +116,8 @@ class AlgorithmComp:
         for i in range(self.N):
             #print('PAESE: ' + str(i))
             for j in range(self.nknots):
-                l[i, j] = self.prob(i, self.knots[j])
-                W_temp[i, j] = np.log(self.weights[j]) + l[i, j]
+                l[i, j] = self.prob(i, self.knots[j]) 
+                W_temp[i, j] = np.log(self.weights[j]) + l[i, j] # because i make use of softmax function
             #print(W_temp[i,:])
 
         W = np.empty( (self.N, self.nknots) )
@@ -221,6 +223,35 @@ class AlgorithmComp:
         Hfun = nd.Hessdiag(f)
         hess = Hfun(b)
         return b, hess
+
+
+    def LogLikelihood(self):
+        llik = 0
+        LL = 0
+        for i in range(self.N):
+            for m in range(self.nknots):
+                LL = LL + self.weights[m] * np.exp(self.prob(i, self.knots[m])) 
+            print(LL)
+            llik = llik + (np.log(LL)) #if LL != 0 else np.log(sys.float_info.min)
+        return(llik)
+
+        #group = np.array([np.nan if np.sum(self.W[i,:])==0 else np.argmax(self.W[i,:]) for i in range(self.N)])
+        #s = []  # s <- rep(0,N)
+        # param_fixed = par
+        # param_random = knots = c
+
+        #unique_values = np.unique(group[~np.isnan(group)])
+        #print(unique_values)
+        #for m in unique_values:
+        #    temp = 1
+        #    positions = np.where(group == m)
+        #    print(positions)
+        #    for i in positions[0]: 
+        #        temp = temp * self.prob(i, self.knots[m])
+
+        #    s.append(self.weights[m] * temp)
+
+        #return np.sum(np.array(s))
 
     #####################################
 

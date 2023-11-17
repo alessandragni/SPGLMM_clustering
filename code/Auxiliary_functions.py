@@ -9,7 +9,10 @@ from scipy.stats import chi2
 
 def check(k_old, k, tol):
     if np.size(k_old) == np.size(k):
-        return sum(np.absolute(k_old - k) > tol)
+        if k.ndim==1:
+            return sum(np.absolute(k_old - k) > tol)
+        else:
+            return sum(np.absolute(k_old - k) > tol).all()
     else:
         return 1
 

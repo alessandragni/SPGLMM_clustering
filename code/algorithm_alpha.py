@@ -15,6 +15,10 @@ def algorithm_alpha(ran_var, ran_int, n_fix, sim, tol, model, fix, lengths, y, N
     conv1 = 0
     conv2 = 0
     no_group = 0
+    loglik = []
+    BIC = []
+    AIC = []
+    masses = []
 
     while (conv1 == 0 or conv2 == 0) and (no_group == 0) and (k < AC.K):
 
@@ -209,9 +213,16 @@ def algorithm_alpha(ran_var, ran_int, n_fix, sim, tol, model, fix, lengths, y, N
         # else:
         #    group = np.array([np.nan if np.sum(AC.W[i, :]) == 0 else np.argmax(AC.W[i, :]) for i in range(AC.N)])
 
-        if check(par_oldss, AC.par, AC.tolF) == 0 and check(knots_oldss, AC.knots, AC.tolR) == 0 and sum(sum(pd.isna(D_triu))) == D_triu.size:
+        if check(par_oldss, AC.par, AC.tolF) == 0 and check(knots_oldss, AC.knots, AC.tolR) == 0 and (k>5) and (sum(sum(pd.isna(D_triu))) == D_triu.size):
             conv1 = 1
+
+        masses.append(AC.knots)
+        ll = AC.LogLikelihood()
+        loglik.append(ll)
+        n_params = np.size(AC.knots) + (len(AC.knots) - 1) + len(AC.par)
+        BIC.append(n_params * np.log(np.sum(AC.lengths)) - 2*ll)
+        AIC.append(n_params * 2 - 2*ll)
 
         k = k + 1
 
-    return AC.knots, AC.par, AC.W, AC.hess_ran, AC.hess_fix
+    return AC.knots, AC.par, AC.W, AC.hess_ran, AC.hess_fix, [masses, loglik, BIC, AIC]
